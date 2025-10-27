@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductsGallery from './components/ProductsGallery';
+import Brands from './components/Brands';
 import Contact from './components/Contact';
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
       <main>
         <Hero />
         <ProductsGallery />
+        <Brands />
         <Contact />
       </main>
     </div>

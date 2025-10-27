@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone, User, MapPin, Facebook, Instagram, MessageCircle, ExternalLink, ArrowUp } from 'lucide-react';
+import { Phone, User, MapPin, Facebook, Instagram, MessageCircle, ExternalLink, ArrowUp, Mail, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Contact() {
@@ -24,7 +24,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-white to-blue-50/40">
+    <section id="contact" className="bg-gradient-to-b from-white to-rose-50/40">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-2">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -33,21 +33,28 @@ export default function Contact() {
 
             <div className="mt-6 space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-blue-600 mt-1" />
+                <Phone className="h-5 w-5 text-rose-600 mt-1" />
                 <div>
                   <p className="font-medium text-slate-900">Phone</p>
-                  <a href="tel:+917816087488" className="text-blue-700 hover:underline">+91 7816087488</a>
+                  <a href="tel:+917816087488" className="text-rose-700 hover:underline">+91 7816087488</a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <User className="h-5 w-5 text-blue-600 mt-1" />
+                <User className="h-5 w-5 text-rose-600 mt-1" />
                 <div>
                   <p className="font-medium text-slate-900">Proprietor</p>
                   <p className="text-slate-700">Ganesh Bora</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-600 mt-1" />
+                <Mail className="h-5 w-5 text-rose-600 mt-1" />
+                <div>
+                  <p className="font-medium text-slate-900">Email</p>
+                  <a href="mailto:info@venkateswaratiles.com" className="text-slate-700 hover:underline">info@venkateswaratiles.com</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-rose-600 mt-1" />
                 <div>
                   <p className="font-medium text-slate-900">Address</p>
                   <p className="text-slate-700">Near Edulavalasa Junction, Polaki Mandal, Srikakulam District, Andhra Pradesh - 532421</p>
@@ -56,11 +63,18 @@ export default function Contact() {
                       href="https://www.google.com/maps?q=Edulavalasa+Junction,+Polaki+Mandal,+Srikakulam+District,+Andhra+Pradesh+532421"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm text-blue-700 hover:border-blue-300 hover:bg-blue-50"
+                      className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-white px-3 py-1.5 text-sm text-rose-700 hover:border-rose-300 hover:bg-rose-50"
                     >
                       <ExternalLink className="h-4 w-4" /> Get Directions
                     </a>
                   </div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="h-5 w-5 text-rose-600 mt-1" />
+                <div>
+                  <p className="font-medium text-slate-900">Hours</p>
+                  <p className="text-slate-700">Mon-Sun: 9:00 AM – 8:30 PM</p>
                 </div>
               </div>
             </div>
@@ -88,17 +102,17 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
                   <label className="block text-sm text-slate-700">Name</label>
-                  <input required type="text" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+                  <input required type="text" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-200" />
                 </div>
                 <div>
                   <label className="block text-sm text-slate-700">Email</label>
-                  <input required type="email" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+                  <input required type="email" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-200" />
                 </div>
                 <div>
                   <label className="block text-sm text-slate-700">Message</label>
-                  <textarea required rows="4" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+                  <textarea required rows="4" className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-200" />
                 </div>
-                <button type="submit" className="w-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-white shadow hover:shadow-lg transition">
+                <button type="submit" className="w-full rounded-full bg-gradient-to-r from-rose-600 to-orange-600 px-6 py-3 text-white shadow hover:shadow-lg transition">
                   Send Message
                 </button>
                 {sent && (
@@ -110,14 +124,57 @@ export default function Contact() {
         </div>
       </div>
 
+      {/* Rich Footer with address/contact */}
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-slate-600">© 2025 Venkateswara Tiles and Sanitary</p>
-          <a href="#home" id="scrollTop" className="opacity-0 transition-opacity" aria-label="Scroll to top">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-blue-300 hover:text-blue-700">
-              <ArrowUp className="h-4 w-4" /> Top
-            </span>
-          </a>
+        <div className="mx-auto max-w-7xl px-6 py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h5 className="text-lg font-semibold text-slate-900">Venkateswara Tiles & Sanitary</h5>
+            <p className="mt-2 text-sm text-slate-600">Quality tiles, sanitary ware and fittings for homes and projects across Srikakulam District.</p>
+          </div>
+          <div>
+            <h6 className="text-sm font-semibold text-slate-900">Address</h6>
+            <p className="mt-2 text-sm text-slate-700">Near Edulavalasa Junction,<br/> Polaki Mandal,<br/> Srikakulam District,<br/> Andhra Pradesh - 532421</p>
+            <a
+              href="https://www.google.com/maps?q=Edulavalasa+Junction,+Polaki+Mandal,+Srikakulam+District,+Andhra+Pradesh+532421"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex items-center gap-2 text-sm text-rose-700 hover:underline"
+            >
+              <ExternalLink className="h-4 w-4" /> Get Directions
+            </a>
+          </div>
+          <div>
+            <h6 className="text-sm font-semibold text-slate-900">Contact</h6>
+            <p className="mt-2 text-sm text-slate-700">Phone: <a href="tel:+917816087488" className="text-rose-700 hover:underline">+91 7816087488</a></p>
+            <p className="text-sm text-slate-700">Email: <a href="mailto:info@venkateswaratiles.com" className="text-slate-700 hover:underline">info@venkateswaratiles.com</a></p>
+            <p className="mt-2 text-sm text-slate-700">Hours: Mon-Sun 9:00 AM – 8:30 PM</p>
+            <div className="mt-3 flex items-center gap-4">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-blue-700"><Facebook /></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-pink-600"><Instagram /></a>
+              <a href="https://wa.me/917816087488" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-green-600"><MessageCircle /></a>
+            </div>
+          </div>
+          <div>
+            <h6 className="text-sm font-semibold text-slate-900">Quick Links</h6>
+            <ul className="mt-2 space-y-2 text-sm">
+              <li><a className="text-slate-700 hover:text-rose-700" href="#home">Home</a></li>
+              <li><a className="text-slate-700 hover:text-rose-700" href="#about">About</a></li>
+              <li><a className="text-slate-700 hover:text-rose-700" href="#products">Products</a></li>
+              <li><a className="text-slate-700 hover:text-rose-700" href="#gallery">Gallery</a></li>
+              <li><a className="text-slate-700 hover:text-rose-700" href="#brands">Brands</a></li>
+              <li><a className="text-slate-700 hover:text-rose-700" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-slate-200">
+          <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-sm text-slate-600">© 2025 Venkateswara Tiles and Sanitary</p>
+            <a href="#home" id="scrollTop" className="opacity-0 transition-opacity" aria-label="Scroll to top">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:border-rose-300 hover:text-rose-700">
+                <ArrowUp className="h-4 w-4" /> Top
+              </span>
+            </a>
+          </div>
         </div>
       </footer>
     </section>
